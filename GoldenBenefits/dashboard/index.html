@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="styledash.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <title>GoldenBenefits Dashboard</title>
+  </head>
+  <body>
+    <nav>
+      <div class="logo">
+        <div class="logo-name">
+          <a href="../html/index.html">GoldenBenefits</a>
+        </div>
+      </div>
+
+      <div class="menu-items">
+        <ul class="navLinks">
+          <li class="navList" data-target="dashboard-content">
+            <a href="#">
+              <ion-icon name="home-outline"></ion-icon>
+              <span class="links">Dashboard</span>
+            </a>
+          </li>
+          <li class="navList" data-target="content-content">
+            <a href="#">
+              <ion-icon name="analytics-outline"></ion-icon>
+              <span class="links">Funcionários</span>
+            </a>
+          </li>
+          <li class="navList" data-target="analytics-content">
+            <a href="#">
+              <ion-icon name="folder-outline"></ion-icon>
+              <span class="links">Benefícios</span>
+            </a>
+          </li>
+          <li class="navList" data-target="comments-content">
+            <a href="#">
+              <ion-icon name="chatbubbles-outline"></ion-icon>
+              <span class="links">Reembolso</span>
+            </a>
+          </li>
+        </ul>
+        <ul class="bottom-link">
+          <li>
+            <a href="#" id="logout">
+              <ion-icon name="log-out-outline"></ion-icon>
+              <span class="links">Logout</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <section class="dashboard">
+      <div class="top">
+        <ion-icon class="navToggle" name="menu-outline"></ion-icon>
+        <div class="searchBox">
+          <ion-icon name="search-outline"></ion-icon>
+          <input type="text" placeholder="Search" />
+        </div>
+        <img src="./Assets/perfil.png" alt="Profile Picture" />
+      </div>
+      <div class="container">
+        <div id="dashboard-content" class="content-container">
+          <!-- Conteúdo do dashboard -->
+          <div class="overview">
+            <div class="title">
+              <ion-icon name="speedometer"></ion-icon>
+              <span class="text">Dashboard</span>
+            </div>
+            <div class="boxes">
+              <div class="box box1">
+                <ion-icon name="person-add-outline"></ion-icon>
+                <span class="text">Funcionários</span>
+                <span class="number">100,567</span>
+              </div>
+              <div class="box box2">
+                <ion-icon name="chatbubbles-outline"></ion-icon>
+                <span class="text">Reembolsos</span>
+                <span class="number">1,128</span>
+              </div>
+              <div class="box box3">
+                <ion-icon name="business-outline"></ion-icon>
+                <span class="text">Empresas</span>
+                <span class="number">28,548</span>
+              </div>
+            </div>
+          </div>
+          <div class="activity">
+            <div class="title">
+              <ion-icon name="time-outline"></ion-icon>
+              <span class="text">Funcionários recentes</span>
+            </div>
+            <div class="activity-data">
+              <div class="data names">
+                <span class="data-title">Name</span>
+              </div>
+              <div class="data email">
+                <span class="data-title">Email</span>
+              </div>
+              <div class="data joined">
+                <span class="data-title">Joined</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          id="content-content"
+          class="content-container"
+          style="display: none"
+        >
+          <!-- Conteúdo da aba "Funcionario" -->
+          <div class="dash-container">
+            <div class="header">
+              <span>Cadastro de Funcionários</span>
+              <button onclick="openModal('funcionarios')" id="new-funcionarios">
+                Incluir
+              </button>
+            </div>
+
+            <div class="divTable">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Nome</th>
+                    <th>Empresa</th>
+                    <th>Função</th>
+                    <th class="acao">Editar</th>
+                    <th class="acao">Excluir</th>
+                  </tr>
+                </thead>
+                <tbody id="tbody-funcionarios"></tbody>
+              </table>
+            </div>
+
+            <div class="modal-container" id="modal-funcionarios">
+              <div class="modal">
+                <form>
+                  <label for="m-nome-funcionarios">Nome</label>
+                  <input id="m-nome-funcionarios" type="text" required />
+
+                  <label for="m-empresa-funcionarios">Empresa</label>
+                  <input id="m-empresa-funcionarios" type="text" required />
+
+                  <label for="m-funcao-funcionarios">Função</label>
+                  <input id="m-funcao-funcionarios" type="text" required />
+
+                  <button id="btnSalvar-funcionarios">Salvar</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          id="analytics-content"
+          class="content-container"
+          style="display: none"
+        >
+          <!-- Conteúdo da aba "Beneficios" -->
+          <div class="dash-container">
+            <div class="header">
+              <span>Cadastro de Benefícios</span>
+              <button onclick="openModalBeneficios()" id="new-beneficios">
+                Incluir
+              </button>
+            </div>
+
+            <div class="divTable">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Nome do Funcionário</th>
+                    <th>Empresa</th>
+                    <th>Nome do Benefício</th>
+                    <th>Valor do Benefício</th>
+                    <th class="acao">Editar</th>
+                    <th class="acao">Excluir</th>
+                  </tr>
+                </thead>
+                <tbody id="tbody-beneficios"></tbody>
+              </table>
+            </div>
+
+            <div class="modal-container" id="modal-beneficios">
+              <div class="modal">
+                <form>
+                  <label for="m-nome-beneficios">Nome do Funcionário</label>
+                  <input id="m-nome-beneficios" type="text" required />
+
+                  <label for="m-empresa-beneficios">Empresa</label>
+                  <input id="m-empresa-beneficios" type="text" required />
+
+                  <label for="m-funcao-beneficios">Nome do Benefício</label>
+                  <input id="m-funcao-beneficios" type="text" required />
+
+                  <label for="m-salario-beneficios">Valor do Benefício</label>
+                  <input id="m-salario-beneficios" type="number" required />
+                  <button id="btnSalvar-beneficios">Salvar</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--REEMBOLSO-->
+        <div
+          id="comments-content"
+          class="content-container"
+          style="display: none"
+        >
+          <!-- Conteúdo da aba "Comments" -->
+          <div class="dash-container">
+            <div class="header">
+              <span>Cadastro de Reembolsos</span>
+              <button onclick="openModalReembolso()" id="new-reembolso">
+                Incluir
+              </button>
+            </div>
+
+            <div class="divTable">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Nome do Funcionário</th>
+                    <th>Empresa</th>
+                    <th>Nome do Benefício</th>
+                    <th>Valor do Benefício</th>
+                    <th>Status</th>
+                    <th class="acao">Editar</th>
+                    <th class="acao">Excluir</th>
+                  </tr>
+                </thead>
+                <tbody id="tbody-reembolso"></tbody>
+              </table>
+            </div>
+
+            <div class="modal-container" id="modal-reembolso">
+              <div class="modal">
+                <form>
+                  <label for="m-nome-funcionario-reembolso"
+                    >Nome do Funcionário</label
+                  >
+                  <input
+                    id="m-nome-funcionario-reembolso"
+                    type="text"
+                    required
+                  />
+
+                  <label for="m-empresa-reembolso">Empresa</label>
+                  <input id="m-empresa-reembolso" type="text" required />
+
+                  <label for="m-nome-beneficio-reembolso"
+                    >Nome do Benefício</label
+                  >
+                  <input id="m-nome-beneficio-reembolso" type="text" required />
+
+                  <label for="m-valor-beneficio-reembolso"
+                    >Valor do Benefício</label
+                  >
+                  <input
+                    id="m-valor-beneficio-reembolso"
+                    type="number"
+                    required
+                  />
+
+                  <button id="btnSalvar-reembolso">Salvar</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+    <script src="./index.js"></script>
+    <script src="./funcionarios.js"></script>
+    <script src="./beneficio.js"></script>
+    <script src="./reembolso.js"></script>
+    <script>
+      // função genérica para abrir o modal do dashboard
+      function openModal(section) {
+        const modal = document.querySelector(`#modal-${section}`);
+        modal.classList.add("active");
+
+        modal.onclick = (e) => {
+          if (e.target.className.indexOf("modal-container") !== -1) {
+            modal.classList.remove("active");
+          }
+        };
+      }
+    </script>
+  </body>
+</html>

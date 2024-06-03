@@ -1,0 +1,35 @@
+{
+  "items": [
+    {
+      "name": "Rômulo silva",
+      "email": "romulo@gmail.com",
+      "joined": "2022-08-25"
+    },
+    {
+      "name": "Vitor Arantes",
+      "email": "vitor@gmail.com",
+      "joined": "2022-08-25"
+    },
+    {
+      "name": "Marco Sousa",
+      "email": "Msousa @gmail.com",
+      "joined": "2022-08-25"
+    },
+    {
+      "name": "Ravena Matos",
+      "email": "RavenaM@gmail.com",
+      "joined": "2022-08-25"
+    },
+
+    {
+      "name": "Bianca Silva",
+      "email": "BSilva@gmail.com",
+      "joined": "2022-08-25"
+    },
+    {
+      "name": "Ramsés de Souza",
+      "email": "Ramses@gmail.com",
+      "joined": "2022-08-25"
+    }
+  ]
+}

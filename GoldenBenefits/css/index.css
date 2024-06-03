@@ -1,0 +1,232 @@
+@import url("https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&family=Inter:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Teko:wght@300..700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #101010;
+  color: #ffffff;
+  overflow-x: auto;
+  overflow-y: auto;
+}
+
+::-webkit-scrollbar {
+  width: 0 !important;
+  height: 0 !important;
+}
+
+html {
+  font-family: Inter, sans-serif;
+  font-weight: 500;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+ul {
+  list-style: none;
+}
+
+nav {
+  max-width: 1120px;
+  margin: auto;
+  padding: 1.5rem 5rem;
+  display: flex;
+  flex-direction: row; /* Mantém a direção como linha */
+  justify-content: space-between; /* Alinha os itens ao longo do eixo principal (horizontal) */
+  align-items: center;
+}
+.logo {
+  width: 20%; /* Define a largura da logo */
+}
+
+.menu {
+  display: flex;
+  flex-direction: row; /* Mantém a direção como linha */
+  gap: 1.5rem;
+  color: #fff2e780;
+}
+
+nav li a:hover {
+  color: grey;
+}
+
+.container-acesso a {
+  text-decoration: none;
+  color: black;
+}
+
+.btn-login {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  display: inline-block;
+  margin: 10px;
+  justify-content: space-between;
+  align-items: center;
+  text-decoration: none;
+  border-radius: 5px;
+  border: none;
+  width: 60px;
+  height: 30px;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}
+.btn-signup {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  display: inline-block;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 5px;
+  border: none;
+  width: 60px;
+  height: 30px;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}
+
+.btn-login:hover {
+  background-color: grey;
+  cursor: pointer;
+}
+
+/*SECTION 1*/
+.home-container {
+  display: flex;
+  width: 1120px;
+  justify-content: space-around;
+  margin-left: 200px;
+}
+
+.section-1 img {
+  width: 460px;
+  height: 400px;
+  border-radius: 5px;
+  margin: 50px;
+}
+h1 {
+  text-align: center;
+  color: #ffff;
+  margin: 60px 20px 50px;
+}
+p {
+  color: #ffff;
+  text-align: justify;
+}
+
+/*FOOTER*/
+footer {
+  width: 100%;
+}
+
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.footer-content h1 {
+  font-size: 1rem;
+  font-weight: 400;
+  text-transform: capitalize;
+  line-height: 0.2rem;
+  margin-bottom: 50px;
+}
+
+.footer-content p {
+  max-width: 500px;
+  margin: 5px auto;
+  line-height: 20px;
+  font-size: 14px;
+}
+
+.socials {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem 0 3rem 0;
+}
+
+.socials li {
+  margin: 0 10px;
+}
+
+.socials a {
+  text-decoration: none;
+  color: #ffff;
+  font-size: 1.5rem;
+}
+
+.socials a i {
+  font-size: 1.1rem;
+}
+
+.socials a:hover i {
+  color: aqua;
+}
+
+.copy {
+  color: #ffff;
+  font-size: 0.9rem;
+  padding: 10px;
+}
+
+/*Medias*/
+
+/* Media queries para telas maiores */
+@media only screen and (max-width: 1920px) {
+  .home-container {
+    max-width: 1400px; /* Limita a largura do conteúdo para telas maiores */
+  }
+}
+
+@media only screen and (max-width: 1440px) {
+  .home-container {
+    max-width: 1100px; /* Ajusta a largura do conteúdo para monitores menores */
+  }
+}
+
+/* Media queries para tablets e dispositivos móveis */
+@media only screen and (max-width: 1024px) {
+  .home-container {
+    max-width: 100%; /* Remove a largura máxima para telas menores */
+    margin-left: 0; /* Remove a margem esquerda */
+    flex-direction: column; /* Altera a direção do flexbox para empilhar verticalmente */
+  }
+
+  .section-1 img {
+    width: 100%; /* Define a largura da imagem para ocupar 100% da largura do contêiner */
+    height: auto; /* Altura automática para manter a proporção */
+    margin: 20px 0; /* Reduz a margem */
+  }
+
+  h1 {
+    margin: 20px 0; /* Reduz a margem superior e inferior */
+    text-align: center; /* Centraliza o texto */
+  }
+
+  p {
+    margin: 0 20px; /* Adiciona margem aos parágrafos */
+    text-align: justify; /* Alinha o texto justificado */
+  }
+}
+
+/* Media queries para dispositivos menores, como smartphones */
+@media only screen and (max-width: 768px) {
+  nav {
+    padding: 1.5rem 1rem; /* Reduz ainda mais o padding do nav */
+  }
+
+  .logo {
+    width: 30%; /* Reduz a largura da logo */
+  }
+}
+
+/* Adicione mais media queries conforme necessário para telas menores */
